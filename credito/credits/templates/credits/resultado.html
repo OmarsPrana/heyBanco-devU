@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resultado de Solicitud</title>
+</head>
+<body>
+    <h2>Resultado de la Solicitud</h2>
+    {% if resultado.aprobado %}
+        <p>La solicitud ha sido aprobada. Se aprueba un monto de {{ resultado.importe_aprobado }}.</p>
+    {% else %}
+        <p>La solicitud ha sido rechazada. Razón: {{ resultado.razon_rechazo }}</p>
+    {% endif %}
+    <a href="{% url 'solicitar_credito' %}">Regresar</a>
+</body>
+</html>

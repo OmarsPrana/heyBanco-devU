@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solicitud de Crédito</title>
+</head>
+<body>
+    <h2>Formulario de Solicitud de Crédito</h2>
+
+    <!-- Mostrar mensajes de error si existen -->
+    {% if error %}
+        <p style="color: red;">{{ error }}</p>
+    {% endif %}
+
+    <form method="POST">
+        {% csrf_token %}
+        <input type="text" name="nombre" placeholder="Nombre" required>
+        <input type="text" name="rfc" placeholder="RFC" required>
+        <input type="date" name="fecha_nacimiento" required>
+        <input type="number" name="importe_solicitado" placeholder="Importe solicitado" required>
+        <input type="number" name="ingresos_mensuales" placeholder="Ingresos mensuales" required>
+        <button type="submit">Enviar Solicitud</button>
+    </form>
+</body>
+</html>
